@@ -1,11 +1,20 @@
 // @ts-check
-import { defineConfig, fontProviders } from 'astro/config';
+import { defineConfig, envField, fontProviders } from 'astro/config';
 import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
     vite: {
         plugins: [tailwindcss()],
+    },
+    env: {
+        schema: {
+            PUBLIC_GOOGLE_SITE_VERIFICATION: envField.string({
+                access: "public",
+                context: "client",
+                optional: true,
+            }),
+        },
     },
     experimental: {
         fonts: [
