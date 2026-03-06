@@ -19,7 +19,10 @@ La imagen muestra un colosal castillo de bloques apilados, etiquetado como _"Tod
 Durante años, los ingenieros nos reímos de esta viñeta con cierta incomodidad. Sabíamos que era cierta. Sin embargo, no fue hasta hace poco que la industria entera experimentó un escalofrío al ver cómo esa predicción casi provoca uno de los mayores colapsos de ciberseguridad en la historia de internet.
 
 ![Pruebas](https://imgs.xkcd.com/comics/dependency.png)
-<p className="text-sm text-center text-gray-500 mt-2 mb-10">*Ilustración original de Randall Munroe (xkcd.com/2347)*</p>
+
+<p className="mt-2 mb-10 text-center text-sm text-gray-500">
+  *Ilustración original de Randall Munroe (xkcd.com/2347)*
+</p>
 
 ## Table of contents
 
@@ -47,14 +50,37 @@ A finales de 2021, un usuario bajo el seudónimo de "Jia Tan" comenzó a contrib
 
 Jia Tan comenzó enviando parches útiles y legítimos. Simultáneamente, otras cuentas falsas (o _sockpuppets_) empezaron a presionar a Collin en los foros públicos, quejándose de la lentitud en la revisión de código y exigiendo que se le diera más control a otros desarrolladores. Vulnerable y agotado, Collin cedió. Gradualmente, Jia Tan obtuvo permisos de co-mantenedor y, finalmente, control casi total sobre el repositorio.
 
-<div className="border-l-4 border-accent bg-accent/8 p-6 my-8 rounded-r-xl">
-  <h4 className="font-bold text-foreground text-base m-0 mb-3 flex items-center gap-2">
-    <svg className="w-5 h-5 text-accent shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd"></path></svg>
+<div className="my-8 rounded-r-xl border-l-4 border-accent bg-accent/8 p-6">
+  <h4 className="m-0 mb-3 flex items-center gap-2 text-base font-bold text-foreground">
+    <svg
+      className="h-5 w-5 shrink-0 text-accent"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+    >
+      <path
+        fillRule="evenodd"
+        d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+        clipRule="evenodd"
+      ></path>
+    </svg>
     La Carga Útil (El Payload)
   </h4>
-  <p className="text-foreground/75 text-sm m-0 leading-relaxed">
-    Una vez en control, Jia Tan introdujo un *backdoor* (puerta trasera) de una sofisticación técnica aterradora. El código malicioso no estaba en el repositorio principal de GitHub de forma evidente, sino oculto dentro de archivos de prueba binarios aparentemente inofensivos. Durante el proceso de compilación, un script altamente ofuscado extraía y ejecutaba el código malicioso, inyectándolo directamente en <strong>OpenSSH</strong> (el protocolo estándar para acceder a servidores de forma remota).<br/><br/>
-    El objetivo final era permitir a los atacantes <strong>ejecutar código arbitrario con privilegios de administrador en prácticamente cualquier servidor Linux moderno del mundo</strong>, sin dejar rastro en los registros.
+  <p className="m-0 text-sm leading-relaxed text-foreground/75">
+    Una vez en control, Jia Tan introdujo un *backdoor* (puerta trasera) de una
+    sofisticación técnica aterradora. El código malicioso no estaba en el
+    repositorio principal de GitHub de forma evidente, sino oculto dentro de
+    archivos de prueba binarios aparentemente inofensivos. Durante el proceso de
+    compilación, un script altamente ofuscado extraía y ejecutaba el código
+    malicioso, inyectándolo directamente en <strong>OpenSSH</strong> (el
+    protocolo estándar para acceder a servidores de forma remota).
+    <br />
+    <br />
+    El objetivo final era permitir a los atacantes{" "}
+    <strong>
+      ejecutar código arbitrario con privilegios de administrador en
+      prácticamente cualquier servidor Linux moderno del mundo
+    </strong>
+    , sin dejar rastro en los registros.
   </p>
 </div>
 

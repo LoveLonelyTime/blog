@@ -2,6 +2,7 @@ import type { Props } from "astro";
 import IconMail from "@/assets/icons/IconMail.svg";
 import IconGitHub from "@/assets/icons/IconGitHub.svg";
 import IconBilibili from "@/assets/icons/IconBilibili.svg";
+import IconBrandX from "@/assets/icons/IconBrandX.svg";
 import IconCV from "@/assets/icons/IconCV.svg";
 import { SITE } from "@/config";
 
@@ -33,17 +34,23 @@ export const SOCIALS: Social[] = [
   },
   {
     name: "CV",
-    href: "none",
-    linkTitle: `${SITE.author}' CV`,
+    href: "/docs/CV.pdf",
+    linkTitle: `${SITE.author}'s CV`,
     icon: IconCV,
   },
 ] as const;
 
 export const SHARE_LINKS: Social[] = [
   {
+    name: "X",
+    href: "https://x.com/intent/post?url=",
+    linkTitle: `Share on X`,
+    icon: IconBrandX,
+  },
+  {
     name: "Mail",
     href: "mailto:?subject=See%20this%20post&body=",
-    linkTitle: `Envia este post por correo`,
+    linkTitle: `Share by mail`,
     icon: IconMail,
   },
 ] as const;

@@ -12,16 +12,12 @@ import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 import { SITE } from "@/config";
 import { SOCIALS } from "@/constants";
 
-
 const posts = await getCollection("blog");
-
-const sortedPosts = getSortedPosts(posts);
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
-const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
+const recentPosts = getSortedPosts(posts);
 ---
 
 <Layout>
-	<Header />
+  <Header />
 
   <main id="main-content" data-layout="index" class="relative app-layout">
     <!-- ═══════════════════ HERO ═══════════════════ -->
@@ -53,18 +49,19 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
         <!-- Motto -->
         <p class="font-motto text-3xl text-accent/40">
-        空がオレンジに染め上がるまで...
+          空がオレンジに染め上がるまで... <span class="typewriter pl-1"></span>
         </p>
 
         <!-- Description -->
         <p
           class="mt-7 max-w-app text-base leading-relaxed opacity-75 sm:text-lg"
         >
-        Hi, I'm LoveLonelyTime. <br />
-        I'm currently working on Computer Architecture, AI Infra & Accelerator, Digital IC, FPGA, SoC.
+          Hi, I'm LoveLonelyTime. <br />
+          I'm working on Computer Architecture, AI Infra & Accelerator, Digital IC,
+          FPGA, SoC.
         </p>
-        <div class="mt-8 flex flex-col sm:flex-row sm:items-center gap-4">
-          <p class="text-sm opacity-50 flex-shrink-0">
+        <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <p class="flex-shrink-0 text-sm opacity-50">
             About author
             <LinkButton
               class="font-medium underline decoration-dashed underline-offset-4 hover:text-accent"
@@ -77,7 +74,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
           {
             // only display if at least one social link is enabled
             SOCIALS.length > 0 && (
-              <div class="sm:border-l border-border/40 sm:pl-4">
+              <div class="border-border/40 sm:border-l sm:pl-4">
                 <Socials />
               </div>
             )
@@ -85,15 +82,13 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         </div>
       </div>
     </section>
-    
+
     <!-- ═══════════════════ RECENT POSTS ═══════════════════ -->
     {
       recentPosts.length > 0 && (
         <section id="recent-posts" class="pt-6 pb-6">
           <div class="mb-6 flex items-center gap-3">
-            <h2 class="text-sm font-bold tracking-widest uppercase">
-              Recents
-            </h2>
+            <h2 class="text-sm font-bold tracking-widest uppercase">Recents</h2>
             <div class="h-px flex-1 bg-border/20" />
             <span class="font-cartograph text-xs text-accent/40 select-none">
               [{recentPosts.slice(0, SITE.postPerIndex).length}/
@@ -107,16 +102,13 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
             )}
           </ul>
 
-          <!-- ═══════════════════ CTA ═══════════════════ -->
-          <div class="mt-8 mb-4 flex justify-center w-full">
+          <div class="mt-8 mb-4 flex w-full justify-center">
             <LinkButton
               href="/posts/"
-              class="group inline-flex items-center w-full sm:w-auto justify-center gap-2 rounded-xl border border-accent/20 bg-accent/10 px-8 py-4 text-base font-bold text-accent transition-all duration-300 hover:border-accent hover:bg-accent/20 hover:shadow-xl hover:shadow-accent/20 hover:-translate-y-0.5"
+              class="group inline-flex w-full items-center justify-center gap-2 rounded-xl border border-accent/20 bg-accent/10 px-8 py-4 text-base font-bold text-accent transition-all duration-300 hover:-translate-y-0.5 hover:border-accent hover:bg-accent/20 hover:shadow-xl hover:shadow-accent/20 sm:w-auto"
             >
               More posts
-              <IconArrowRight
-                class="inline-block transition-transform duration-300 group-hover:translate-x-1 rtl:-rotate-180"
-              />
+              <IconArrowRight class="inline-block transition-transform duration-300 group-hover:translate-x-1 rtl:-rotate-180" />
             </LinkButton>
           </div>
         </section>
@@ -126,7 +118,6 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
   <Footer />
 </Layout>
-
 
 <style>
   /* ── Hero title shimmer ── */
@@ -155,6 +146,17 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
     50% {
       background-position: 100% center;
     }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+  .typewriter {
+    border-right: 4px solid;
+    animation: blink 0.7s infinite;
   }
 </style>
 

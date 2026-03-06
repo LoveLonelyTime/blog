@@ -63,25 +63,10 @@ const structuredData = {
 
     <!-- Load Font -->
     <Font
-      cssVariable="--font-hina-mincho"
-      preload={[{ subset: "latin", weight: 400, style: "normal" }]}
-    />
-    <!-- <Font
-      cssVariable="--font-wotfard"
-      preload={[{ subset: "latin", weight: 400, style: "normal" }]}
-    />
-    <Font
-      cssVariable="--font-sriracha"
-      preload={[{ subset: "latin", weight: 400, style: "normal" }]}
-    />
-    <Font
       cssVariable="--font-cartograph"
       preload={[{ subset: "latin", weight: 400, style: "normal" }]}
     />
-    <Font
-      cssVariable="--font-cascadia-code"
-      preload={[{ subset: "latin", weight: 400, style: "normal" }]}
-    /> -->
+    <Font cssVariable="--font-hina-mincho" preload />
 
     <!-- General Meta Tags -->
     <title>{title}</title>
@@ -130,12 +115,12 @@ const structuredData = {
 
     <!-- Enable RSS feed auto-discovery  -->
     <!-- https://docs.astro.build/en/recipes/rss/#enabling-rss-feed-auto-discovery -->
-    <!-- <link
+    <link
       rel="alternate"
       type="application/rss+xml"
       title={SITE.title}
-      href={new URL("rss.xml", Astro.site)}
-    /> -->
+      href={new URL("/rss.xml", Astro.site)}
+    />
 
     <meta name="theme-color" content="" />
 
@@ -274,7 +259,8 @@ const structuredData = {
     height: 1100px;
     margin-left: -550px;
     margin-top: -550px;
-    transform: translate(var(--site-cx, 50vw), var(--site-cy, 50vh)) translateZ(0);
+    transform: translate(var(--site-cx, 50vw), var(--site-cy, 50vh))
+      translateZ(0);
     background: radial-gradient(
       circle,
       color-mix(in oklab, var(--accent) 6%, transparent) 0%,
