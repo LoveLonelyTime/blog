@@ -24,7 +24,7 @@ const isActive = (path: string) => {
   id="main-header"
   class="sticky top-0 z-40 w-full transition-colors duration-300"
 >
-  <div class="app-layout">
+  <div class="header-scrolled-filter app-layout">
     <div
       id="top-nav-wrap"
       class:list={[
@@ -228,9 +228,13 @@ const isActive = (path: string) => {
       var(--background) 80%,
       transparent
     ) !important;
+
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  }
+
+  :global(.header-scrolled .header-scrolled-filter) {
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
   }
 
   .nav-logo-text {
@@ -716,6 +720,7 @@ const isActive = (path: string) => {
     // Close when clicking the backdrop
     if (backdrop) {
       backdrop.addEventListener("click", closeMenu, { signal });
+      window.addEventListener("scroll", closeMenu, { passive: true, signal });
     }
 
     // Close mobile menu on link click
