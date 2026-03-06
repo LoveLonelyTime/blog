@@ -5,9 +5,9 @@
 
 :root,
 html[data-theme="light"] {
-  --background: #f5f3ec;
+  --background: #f7eee5;
   --foreground: #47433f;
-  --accent: #ff6f4e;
+  --accent: #ff623e;
   --muted: #bb956c;
   --border: #ffbba6;
 }
@@ -15,7 +15,7 @@ html[data-theme="light"] {
 html[data-theme="dark"] {
   --background: #1a1919;
   --foreground: #f5f3ec;
-  --accent: #ff6f4e;
+  --accent: #ff623e;
   --muted: #3f3121;
   --border: #ffbba6;
 }

@@ -1,6 +1,7 @@
 @plugin "@tailwindcss/typography";
 
 @layer base {
+
   /* ===== Override default Tailwind Typography styles ===== */
   .app-prose {
     @apply prose;
@@ -29,11 +30,9 @@
 
     a {
       @apply relative font-medium wrap-break-word text-foreground no-underline transition-all duration-200;
-      background-image: linear-gradient(
-        to right,
-        color-mix(in srgb, var(--accent) 40%, transparent),
-        color-mix(in srgb, var(--accent) 40%, transparent)
-      );
+      background-image: linear-gradient(to right,
+          color-mix(in srgb, var(--accent) 40%, transparent),
+          color-mix(in srgb, var(--accent) 40%, transparent));
       background-position: 0 100%;
       background-size: 100% 1px;
       background-repeat: no-repeat;
@@ -88,7 +87,7 @@
     }
 
     code {
-      @apply rounded-md bg-muted/15 px-1.5 py-0.5 font-cartograph text-sm wrap-break-word text-foreground shadow-sm shadow-black/5 before:content-none after:content-none;
+      @apply rounded-md bg-muted/15 px-1.5 py-0.5 font-cartograph text-sm wrap-break-word text-foreground before:content-none after:content-none;
     }
 
     .astro-code code {
@@ -140,7 +139,7 @@
         background-color 0.2s;
     }
 
-    details[open] > summary::before {
+    details[open]>summary::before {
       background-color: var(--accent);
       opacity: 0.8;
     }
@@ -166,31 +165,31 @@
         background-color 0.2s;
     }
 
-    details[open] > summary::after {
+    details[open]>summary::after {
       transform: rotate(180deg);
       background-color: var(--accent);
       opacity: 0.7;
     }
 
     /* TOC inner list container */
-    details > ul {
+    details>ul {
       @apply relative mx-0 mt-0 mb-0 border-t border-border/15 px-4 pt-2 pb-3;
     }
 
-    details > ul > li {
+    details>ul>li {
       @apply relative list-none py-0.5;
     }
 
-    details > ul li {
+    details>ul li {
       @apply list-none;
     }
 
-    details > ul li a {
+    details>ul li a {
       @apply relative inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 font-cartograph text-[13px] text-foreground/85 no-underline transition-all duration-200 hover:bg-accent/8 hover:text-accent hover:no-underline;
       background-image: none !important;
     }
 
-    details > ul li a::before {
+    details>ul li a::before {
       content: "";
       display: inline-block;
       width: 6px;
@@ -201,27 +200,27 @@
       transition: all 0.2s;
     }
 
-    details > ul li a:hover::before {
+    details>ul li a:hover::before {
       background: var(--accent);
       box-shadow: 0 0 8px color-mix(in srgb, var(--accent) 40%, transparent);
     }
 
     /* Nested list (sub-items) */
-    details > ul ul {
+    details>ul ul {
       @apply my-0 ml-3 border-l-2 border-accent/15 pl-2;
     }
 
-    details > ul ul li a {
+    details>ul ul li a {
       @apply text-[12px] text-foreground/70;
     }
 
-    details > ul ul li a::before {
+    details>ul ul li a::before {
       width: 4px;
       height: 4px;
       background: color-mix(in srgb, var(--accent) 35%, transparent);
     }
 
-    details > ul ul li a:hover::before {
+    details>ul ul li a:hover::before {
       background: color-mix(in srgb, var(--accent) 70%, transparent);
     }
 
@@ -250,12 +249,15 @@
     .line.diff.add {
       @apply relative inline-block w-full bg-green-400/20 before:absolute before:-left-3 before:text-green-500 before:content-['+'];
     }
+
     .line.diff.remove {
       @apply relative inline-block w-full bg-red-500/20 before:absolute before:-left-3 before:text-red-500 before:content-['-'];
     }
+
     .line.highlighted {
       @apply inline-block w-full bg-slate-400/20;
     }
+
     .highlighted-word {
       @apply rounded-sm border border-border px-0.5 py-px;
     }
