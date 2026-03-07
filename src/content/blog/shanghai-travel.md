@@ -1,6 +1,6 @@
 ---
 title: 上海之旅
-description: 这次用Astro框架搭建了个人博客
+description: 记录一下我的上海之旅
 pubDatetime: 2026-01-27T10:00:00+08:00
 tags:
   - 生活
