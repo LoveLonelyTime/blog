@@ -1,0 +1,16 @@
+{
+    "name": "Node 24 Alpine Dev",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "workspaceFolder": "/workspace",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+    "updateRemoteUserUID": true,
+    "remoteUser": "node",
+    "containerEnv": {
+        "NODE_ENV": "development"
+    },
+    "forwardPorts": [
+        4321
+    ]
+}
