@@ -10,6 +10,8 @@ import {
     transformerNotationHighlight,
     transformerNotationWordHighlight,
 } from "@shikijs/transformers";
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import { SITE } from "./src/config";
 
@@ -26,7 +28,8 @@ export default defineConfig({
         }),
     ],
     markdown: {
-        remarkPlugins: [remarkToc, [remarkCollapse, { test: "Table of contents" }]],
+        remarkPlugins: [remarkToc, [remarkCollapse, { test: "Table of contents" }], remarkMath],
+        rehypePlugins: [rehypeKatex],
         shikiConfig: {
             // For more themes, visit https://shiki.style/themes
             themes: { light: "github-light-default", dark: "github-dark-default" },

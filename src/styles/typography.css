@@ -262,4 +262,9 @@
       @apply rounded-sm border border-border px-0.5 py-px;
     }
   }
+
+  /* ===== Katex ===== */
+  .katex {
+    color: var(--color-foreground);
+  }
 }
