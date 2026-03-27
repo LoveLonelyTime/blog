@@ -267,4 +267,10 @@
   .katex {
     color: var(--color-foreground);
   }
+
+  .katex-display {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
 }
