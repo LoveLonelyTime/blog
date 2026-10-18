@@ -13,6 +13,8 @@ I am an individual researcher in computer science, dedicated to the research of 
 
 ## EXPERIENCE
 
+- **AI Infra Engineer Intern** | 2012 Lab, Huawei Technologies Co., Ltd. | _Jul. 2026 – Present_
+- **AI Infra Engineer Intern** | WXG, Tencent Holdings Ltd. | _Mar. 2026 – Jul. 2026_
 - **Digital IC Backend Engineer Intern** | Cambricon Technologies Co., Ltd. | _Sep. 2025 – Dec. 2025_
 - **Software Developer Intern** | Software Research Institute, China Unicom Co., Ltd. | _Jun. 2022 – Sep. 2022_
 
@@ -23,7 +25,7 @@ I am an individual researcher in computer science, dedicated to the research of 
 
 ## PUBLICATION
 
-I hope I could have.
+1. **Honghao Jia**, Zhenxing Li, Jialiang Guo, Jiacheng Gan. ADKV: A Low-Overhead Adaptive Delta Quantization for KV Cache in LLM Inference. In *Advances in Neural Information Processing Systems* (NeurIPS), 2026.
 
 ## SKILL
 
